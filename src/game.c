@@ -212,7 +212,7 @@ int main(void)
     PlayMusicStream(music);
 
     // init level variables for control flow
-    int correct_answers = 4;
+    int correct_answers = 0;
     while (!WindowShouldClose())
     {
         // begin playing music
@@ -472,13 +472,6 @@ int main(void)
                         lives--;
                         
                         game_state = 5;
-                        // draw lose screen
-                        // printf("draw lose screen and waiting 3 seconds\n");
-                        // DrawTextureRec(lose_screen, rec8, (Vector2){ 0, 0 }, RAYWHITE);
-                        // play some sound here
-                        // could display a wrong sign on screen here also
-                        
-                        // WaitTime(3);
                     }
                 }
                     
