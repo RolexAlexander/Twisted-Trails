@@ -98,8 +98,6 @@ typedef struct Player {
 
 // Function to check collision between player and walls
 bool CheckCollisionWithWalls(Vector2 position) {
-    int playerCellX = position.x / CELL_SIZE;
-    int playerCellY = position.y / CELL_SIZE;
 
     // Calculate the vertices of the player's bounding box
     int topX = position.x;
@@ -118,8 +116,6 @@ bool CheckCollisionWithWalls(Vector2 position) {
 }
 
 void CheckCollisionWithQuestions(Vector2 position) {
-    int playerCellX = position.x / CELL_SIZE;
-    int playerCellY = position.y / CELL_SIZE;
 
     // Calculate the vertices of the player's bounding box
     int topX = position.x;
@@ -196,23 +192,22 @@ int main(void)
     Texture2D wall_block_texture = LoadTexture("./assets/block.png");
     Texture2D floor_grass_texture = LoadTexture("./assets/g2.png");
     Texture2D player_texture = LoadTexture("./assets/spider.png");
-    Texture2D lose_screen = LoadTexture("./assets/lose.png");
     Texture2D intro_screen = LoadTexture("./assets/intro_screen.png");
     Texture2D incorrect = LoadTexture("./assets/incorrect.png");
     Texture2D correct = LoadTexture("./assets/correct.png");
     Texture2D question_texture = LoadTexture("./assets/question.png");
     Texture2D level_completed = LoadTexture("./assets/level_completed.png");
-    Image image = LoadImage("./assets/intro_screen.png"); 
+    Image image = LoadImage("./assets/icon.png"); 
     Font introfont = LoadFont("./assets/font2.ttf");
     Music music = LoadMusicStream("./assets/ambient.ogg");
 
     // create rectangles
     Rectangle rec12 = {0, 0, 40, 40};
-    Rectangle rec7 = {0, 0, 25, 25};
     Rectangle rec8 = {0, 0, 600, 500};
     Rectangle rec10 = {0, 0, 1600, 800};
 
-
+    // set window icon
+    SetWindowIcon(image);  
     // play music stream
     PlayMusicStream(music);
 
@@ -243,7 +238,7 @@ int main(void)
             {
                 player.position.y += player.speed;
             }
-            if (IsKeyDown(KEY_UP) && !CheckCollisionWithWalls((Vector2){ player.position.x, player.position.y - player.speed }) || (IsKeyDown(KEY_UP) && (((player.position.y + 40) > 800) || ((player.position.y - 40) < 0)) /*&& (correct_answers == 5)*/))
+            if ((IsKeyDown(KEY_UP) && !CheckCollisionWithWalls((Vector2){ player.position.x, player.position.y - player.speed })) || (IsKeyDown(KEY_UP) && (((player.position.y + 40) > 800) || ((player.position.y - 40) < 0)) /*&& (correct_answers == 5)*/))
             {
                 player.position.y -= player.speed;
             }
