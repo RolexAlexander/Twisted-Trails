@@ -207,7 +207,9 @@ int main(void)
     Rectangle rec10 = {0, 0, 1600, 800};
 
     // set window icon
+    // TODO: fix icon
     SetWindowIcon(image);  
+
     // play music stream
     PlayMusicStream(music);
 
