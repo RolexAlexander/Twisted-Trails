@@ -208,7 +208,7 @@ int main(void)
 
     // set window icon
     // TODO: fix icon
-    SetWindowIcon(image);  
+    // SetWindowIcon(image);  
 
     // play music stream
     PlayMusicStream(music);
