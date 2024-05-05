@@ -82,7 +82,7 @@ Rectangle intromenuOptionRecs[NUM_MENU_OPTIONS] = {
 
 int (*levels[])[MAZE_LEVEL_HEIGHT][MAZE_LEVEL_WIDTH] = {&level_1, &level_2, &level_3, &level_4, &level_5, &level_6, &level_7, &level_8, &level_9, &level_10, &level_11, &level_12, &level_13, &level_14, &level_15, &level_16, &level_17, &level_18, &level_19, &level_20};
 LevelQuestions *current_level_questions[20] = {&level1_questions, &level2_questions, &level3_questions, &level4_questions, &level5_questions, &level6_questions, &level7_questions, &level8_questions, &level9_questions, &level10_questions, &level11_questions, &level12_questions, &level13_questions, &level14_questions, &level15_questions, &level16_questions, &level17_questions, &level18_questions, &level19_questions, &level20_questions}; // store the questions for the 20 levels
-int current_level = 2; // this is the index of the level so 0 means 1 ans 1 means 2
+int current_level = 0; // this is the index of the level so 0 means 1 ans 1 means 2
 int game_state = 0; // 0 = intro, 1 = playing, 2 = instructions, 3 = win, 4 = asking_question, 5 = instructions, 6 = leaderboard, 7 = settings, 8 = help 9 = next level, 10 = game over 11 win screenwhen someone conquers the game
 int question_number = 0;
 int lives = 5;
