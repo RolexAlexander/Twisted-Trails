@@ -89,6 +89,7 @@ int lives = 5;
 int points = 0;
 int IsClickedOption;
 int IsHoveredOption;
+int correct_answers = 0; // init level variables for control flow
 
 // Define the player structure
 typedef struct Player {
@@ -107,10 +108,10 @@ bool CheckCollisionWithWalls(Vector2 position) {
     int bottomY = position.y + PLAYER_SIZE;
 
     // Check each corner of the player's bounding box for collision
-    bool topLeftCollision = (*levels[current_level])[topX / CELL_SIZE][topY / CELL_SIZE] == 1;
-    bool topRightCollision = (*levels[current_level])[bottomX / CELL_SIZE][topY / CELL_SIZE] == 1;
-    bool bottomLeftCollision = (*levels[current_level])[topX / CELL_SIZE][bottomY / CELL_SIZE] == 1;
-    bool bottomRightCollision = (*levels[current_level])[bottomX / CELL_SIZE][bottomY / CELL_SIZE] == 1;
+    bool topLeftCollision = ((*levels[current_level])[topX / CELL_SIZE][topY / CELL_SIZE] == 1) || (((*levels[current_level])[topX / CELL_SIZE][topY / CELL_SIZE] == 3) && correct_answers != 5);
+    bool topRightCollision = ((*levels[current_level])[bottomX / CELL_SIZE][topY / CELL_SIZE] == 1) || (((*levels[current_level])[bottomX / CELL_SIZE][topY / CELL_SIZE] == 3) && correct_answers != 5);
+    bool bottomLeftCollision = ((*levels[current_level])[topX / CELL_SIZE][bottomY / CELL_SIZE] == 1) || (((*levels[current_level])[topX / CELL_SIZE][bottomY / CELL_SIZE] == 1) && correct_answers != 5);
+    bool bottomRightCollision = ((*levels[current_level])[bottomX / CELL_SIZE][bottomY / CELL_SIZE] == 1) || (((*levels[current_level])[bottomX / CELL_SIZE][bottomY / CELL_SIZE] == 3) && correct_answers != 5);
 
     // If any corner collides with a wall, return true
     return topLeftCollision || topRightCollision || bottomLeftCollision || bottomRightCollision;
@@ -208,7 +209,7 @@ int main(void)
     // Load assets
     Texture2D wall_block_texture = LoadTexture("./assets/block.png");
     Texture2D floor_grass_texture = LoadTexture("./assets/g2.png");
-    Texture2D player_texture = LoadTexture("./assets/spider.png");
+    Texture2D player_texture = LoadTexture("./assets/faceicn.png");
     Texture2D intro_screen = LoadTexture("./assets/intro_screen.png");
     Texture2D incorrect = LoadTexture("./assets/incorrect.png");
     Texture2D correct = LoadTexture("./assets/correct.png");
@@ -219,6 +220,7 @@ int main(void)
     Texture2D current_level_texture = LoadTexture("./assets/current_level.png");
     Texture2D game_over_texture = LoadTexture("./assets/gameoverscreen.png");
     Texture2D win_texture = LoadTexture("./assets/gamecompleted.png");
+    Texture2D question_screen = LoadTexture("./assets/questionscreen.png");
     Image image = LoadImage("./assets/logo3.png"); 
     Font introfont = LoadFont("./assets/font2.ttf");
     Music music = LoadMusicStream("./assets/ambient.ogg");
@@ -227,6 +229,7 @@ int main(void)
     Rectangle rec12 = {0, 0, 40, 40};
     Rectangle rec8 = {0, 0, 600, 500};
     Rectangle rec10 = {0, 0, 1600, 800};
+    Rectangle player_rec = {0, 0, 20, 20};
 
     // set window icon
     // TODO: fix icon
@@ -235,8 +238,6 @@ int main(void)
     // play music stream
     PlayMusicStream(music);
 
-    // init level variables for control flow
-    int correct_answers = 0;
     while (!WindowShouldClose() || IsKeyDown(KEY_ESCAPE))
     {
         // log when we press escape
@@ -469,8 +470,8 @@ int main(void)
             }
             
             // Draw player
-            DrawRectangle(player.position.x, player.position.y, PLAYER_SIZE, PLAYER_SIZE, RED);
-            // DrawTextureRec(player_texture, rec12, (Vector2){ player.position.x, player.position.y }, RAYWHITE);
+            // DrawRectangle(player.position.x, player.position.y, PLAYER_SIZE, PLAYER_SIZE, RED);
+            DrawTextureRec(player_texture, player_rec, (Vector2){ player.position.x, player.position.y }, RAYWHITE);
             
             if(game_state == 4){
                 // define menu options
@@ -484,7 +485,8 @@ int main(void)
 
 
                 // draw question stuff outline
-                DrawRectangle(500, 100, 600, 500, LIGHTGRAY);
+                // DrawRectangle(500, 100, 600, 500, LIGHTGRAY);
+                DrawTextureRec(question_screen, rec8, (Vector2){ 500, 100 }, RAYWHITE);
                 DrawText(TextFormat("Question %d", question_number), 520, 120, 40, BLACK);
 
                 // Draw question
