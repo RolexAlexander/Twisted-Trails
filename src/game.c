@@ -82,7 +82,7 @@ Rectangle intromenuOptionRecs[NUM_MENU_OPTIONS] = {
 
 int (*levels[])[MAZE_LEVEL_HEIGHT][MAZE_LEVEL_WIDTH] = {&level_1, &level_2, &level_3, &level_4, &level_5, &level_6, &level_7, &level_8, &level_9, &level_10, &level_11, &level_12, &level_13, &level_14, &level_15, &level_16, &level_17, &level_18, &level_19, &level_20};
 int current_level = 0;
-int game_state = 0; // 0 = intro, 1 = playing, 2 = instructions, 3 = win, 4 = asking_question, 5 = instructions, 6 = leaderboard, 7 = settings, 8 = help 9 = next level
+int game_state = 0; // 0 = intro, 1 = playing, 2 = instructions, 3 = win, 4 = asking_question, 5 = instructions, 6 = leaderboard, 7 = settings, 8 = help 9 = next level, 10 = game over 11 win screenwhen someone conquers the game
 int question_number = 0;
 int lives = 5;
 int points = 0;
@@ -175,6 +175,22 @@ int GetClickedOption(int mousex, int mousey, Rectangle* optionRecs, int numOptio
     return -1; // No option clicked
 }
 
+// reset all intermidate game state changes so the user can replay the level. that is just chage 10 to 2
+void reset_current_level(void) {
+    // reset level
+    for (int x = 0; x < MAZE_LEVEL_HEIGHT; x++)
+    {
+        for (int y = 0; y < MAZE_LEVEL_WIDTH; y++)
+        {
+            // change 10 to 2 if there is any ten
+            if ((*levels[current_level])[x][y] == 10)
+            {
+                (*levels[current_level])[x][y] = 2;
+            }
+        }
+    }
+}
+
 /* Main function */
 int main(void)
 {
@@ -197,7 +213,12 @@ int main(void)
     Texture2D correct = LoadTexture("./assets/correct.png");
     Texture2D question_texture = LoadTexture("./assets/question.png");
     Texture2D level_completed = LoadTexture("./assets/level_completed.png");
-    Image image = LoadImage("./assets/icon.png"); 
+    Texture2D points_texture = LoadTexture("./assets/coin.png");
+    Texture2D life_texture = LoadTexture("./assets/life.png");
+    Texture2D current_level_texture = LoadTexture("./assets/current_level.png");
+    Texture2D game_over_texture = LoadTexture("./assets/gameoverscreen.png");
+    Texture2D win_texture = LoadTexture("./assets/gamecompleted.png");
+    Image image = LoadImage("./assets/logo3.png"); 
     Font introfont = LoadFont("./assets/font2.ttf");
     Music music = LoadMusicStream("./assets/ambient.ogg");
 
@@ -208,15 +229,20 @@ int main(void)
 
     // set window icon
     // TODO: fix icon
-    // SetWindowIcon(image);  
+    SetWindowIcon(image);  
 
     // play music stream
     PlayMusicStream(music);
 
     // init level variables for control flow
     int correct_answers = 0;
-    while (!WindowShouldClose())
+    while (!WindowShouldClose() || IsKeyDown(KEY_ESCAPE))
     {
+        // log when we press escape
+        if(IsKeyDown(KEY_ESCAPE)){
+            printf("Escape key pressed\n");
+        }
+
         // begin playing music
         UpdateMusicStream(music);      // Update music buffer with new stream data
 
@@ -384,8 +410,21 @@ int main(void)
             };
         }
 
-        else if(game_state == 1 || game_state == 4 || game_state == 5 || game_state == 3 || game_state == 9){
-            // redirect to game completed once level is completed. level is completed only if the player x and y are greater than the size of the maze
+        else if(game_state == 1 || game_state == 4 || game_state == 5 || game_state == 3 || game_state == 9 || game_state == 10 || game_state == 11){
+            // check if player has won / conquered the game then send back to level one
+            // TODO: check if player has won
+            if((current_level+1 == 20) && (correct_answers == 5)){
+                // show level completed screen
+                game_state = 11;
+            }
+            
+            // check if player has lost
+            if(lives <= 0){
+                // show game over screen
+                game_state = 10;
+            }
+
+            // redirect to game completed once level is completed. level is completed only if the player x and y are greater than the size of the maze and if x or y is less than 0
             if (player.position.x > MAZE_WIDTH || player.position.y > MAZE_HEIGHT || player.position.x < 0 || player.position.y < 0) {
                 // show level completed screen
                 game_state = 9;
@@ -431,6 +470,7 @@ int main(void)
             // Draw player
             DrawRectangle(player.position.x, player.position.y, PLAYER_SIZE, PLAYER_SIZE, RED);
             // DrawTextureRec(player_texture, rec12, (Vector2){ player.position.x, player.position.y }, RAYWHITE);
+            
             if(game_state == 4){
                 // define menu options
                 char *menuOptionText[4] = { level1_questions.level_questions[question_number-1].option1, level1_questions.level_questions[question_number-1].option2, level1_questions.level_questions[question_number-1].option3, level1_questions.level_questions[question_number-1].option4 };
@@ -540,6 +580,9 @@ int main(void)
             }
 
             if (game_state == 9) {
+                // first reset level so it can be played again
+                reset_current_level();
+
                 // draw incorrect answer and wait for user to click retry button
                 DrawTextureRec(level_completed, rec8, (Vector2){ 500, 100 }, RAYWHITE);
                 
@@ -566,27 +609,17 @@ int main(void)
                     // return to main menu
                     switch (IsClickedOption) {
                         case 0:
-                            ClearBackground(RAYWHITE);
                             game_state = 1;
-                            if(current_level >= 19){
-                                current_level = 0;
-                            }else {
-                                current_level++;
-                            }                            
-                            correct_answers = 4;
+                            current_level++;
+                            correct_answers = 0;
                             question_number = 0;
                             player.position.x = 40;
                             player.position.y = 40;
                             break;
                         default:
-                            ClearBackground(RAYWHITE);
                             game_state = 0;
-                            if(current_level >= 19){
-                                current_level = 0;
-                            }else {
-                                current_level++;
-                            }
-                            correct_answers = 4;
+                            current_level++;
+                            correct_answers = 0;
                             question_number = 0;
                             player.position.x = 40;
                             player.position.y = 40;
@@ -594,8 +627,116 @@ int main(void)
                     }                    
                 };
             }
+
+            if (game_state == 10) {
+                // first reset level so it can be played again
+                reset_current_level();
+
+                // draw lose screen
+                DrawTextureRec(game_over_texture, rec10, (Vector2){ 0, 0 }, RAYWHITE);
+                
+                // create text for menu options
+                char *menuOptionText[2] = { "Retry" , "Main Menu" };
+
+                Rectangle back_rec[2] = {(Rectangle){ 560, 550, 230, 40 }, (Rectangle){ 810, 550, 230, 40 }};
+                
+                // Draw intructions and back button
+                for (int i = 0; i < 2; i++) {
+                    DrawRectangleRec(back_rec[i], (IsClickedOption == i || IsHoveredOption == i) ? DARKGRAY : YELLOW);
+                    DrawRectangleLines(back_rec[i].x, back_rec[i].y, back_rec[i].width, back_rec[i].height, (IsClickedOption == i || IsHoveredOption == i) ? DARKBROWN : BEIGE);
+                    DrawTextEx(introfont, menuOptionText[i], (Vector2){(int)(back_rec[i].x + back_rec[i].width / 2 - MeasureText(menuOptionText[i], 30) / 2)-10, (int)back_rec[i].y + 7}, 30, 5, (IsClickedOption == i || IsHoveredOption == i) ? YELLOW : BLACK);
+                }
+
+                // Check for mouse interaction with menu options
+                int mousex = GetMouseX();
+                int mousey = GetMouseY();
+                IsClickedOption = GetClickedOption(mousex, mousey, back_rec, 2);
+                IsHoveredOption = -1; // Reset hovered option
+
+                // Handle menu option click events
+                if (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) && IsClickedOption != -1) {
+                    // return to main menu
+                    switch (IsClickedOption) {
+                        case 0:
+                            game_state = 1;
+                            lives = 5;
+                            correct_answers = 0;
+                            player.position.x = 40;
+                            player.position.y = 40;
+                            question_number = 0;
+                            break;
+                        default:
+                            game_state = 0;
+                            lives = 5;
+                            correct_answers = 0;
+                            player.position.x = 40;
+                            player.position.y = 40;
+                            question_number = 0;
+                            break;
+                    }                    
+                };
+            }
+
+            if (game_state == 11) {
+
+                // draw win screen
+                DrawTextureRec(win_texture, rec10, (Vector2){ 0, 0 }, RAYWHITE);
+                
+                // create text for menu options
+                char *menuOptionText[2] = { "Play Again" , "Main Menu" };
+
+                Rectangle back_rec[2] = {(Rectangle){ 560, 550, 230, 40 }, (Rectangle){ 810, 550, 230, 40 }};
+                
+                // Draw intructions and back button
+                for (int i = 0; i < 2; i++) {
+                    DrawRectangleRec(back_rec[i], (IsClickedOption == i || IsHoveredOption == i) ? DARKGRAY : YELLOW);
+                    DrawRectangleLines(back_rec[i].x, back_rec[i].y, back_rec[i].width, back_rec[i].height, (IsClickedOption == i || IsHoveredOption == i) ? DARKBROWN : BEIGE);
+                    DrawTextEx(introfont, menuOptionText[i], (Vector2){(int)(back_rec[i].x + back_rec[i].width / 2 - MeasureText(menuOptionText[i], 30) / 2)-10, (int)back_rec[i].y + 7}, 30, 5, (IsClickedOption == i || IsHoveredOption == i) ? YELLOW : BLACK);
+                }
+
+                // Check for mouse interaction with menu options
+                int mousex = GetMouseX();
+                int mousey = GetMouseY();
+                IsClickedOption = GetClickedOption(mousex, mousey, back_rec, 2);
+                IsHoveredOption = -1; // Reset hovered option
+
+                // Handle menu option click events
+                if (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) && IsClickedOption != -1) {
+                    // return to main menu
+                    switch (IsClickedOption) {
+                        case 0:
+                            game_state = 1;
+                            lives = 5;
+                            correct_answers = 0;
+                            player.position.x = 40;
+                            player.position.y = 40;
+                            question_number = 0;
+                            current_level = 0;
+                            break;
+                        default:
+                            game_state = 0;
+                            lives = 5;
+                            correct_answers = 0;
+                            player.position.x = 40;
+                            player.position.y = 40;
+                            question_number = 0;
+                            current_level = 0;
+                            break;
+                    }                    
+                };
+            }
+
+
+            // draw life, coin, and level
+            DrawTextureRec(current_level_texture, rec12, (Vector2){ 680, 0 }, RAYWHITE);
+            DrawText(TextFormat("%d", current_level+1), (int)(720 + 40 / 2 - MeasureText(TextFormat("%d", current_level), 40) / 2), 2, 40, WHITE);
+            DrawTextureRec(life_texture, rec12, (Vector2){ 760, 0 }, RAYWHITE);
+            DrawText(TextFormat("%d", lives), (int)(800 + 40 / 2 - MeasureText(TextFormat("%d", lives), 40) / 2), 2, 40, WHITE);
+            DrawTextureRec(points_texture, rec12, (Vector2){ 840, 0 }, RAYWHITE);
+            DrawText(TextFormat("%d", correct_answers), (int)(880 + 40 / 2 - MeasureText(TextFormat("%d", correct_answers), 40) / 2), 2, 40, WHITE);
         }
         
+
         EndDrawing();
     }
 
