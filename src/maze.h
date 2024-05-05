@@ -920,10 +920,10 @@ LevelQuestions level3_questions = {
     3, 
     {
         {1, "What is the capital of Australia?", "Sydney", "Melbourne", "Canberra", "Perth", 3},
-        {2, "Which river is the longest in the world?", "Amazon", "Nile", "Missisissipi", "Yangtze", 2},
+        {2, "Which river is the longest in the \n\nworld?", "Amazon", "Nile", "Missisissipi", "Yangtze", 2},
         {3, "Which of the following countries is not \n\nlocated in Europe?", "Norway", "Iceland", "Argentina", "Switzerland", 3},
-        {4, "What is the tallest mountain in the world?", "Mount Kilimanjaro", "Mount Everest", "K2", "Mount Fuji", 2},
-        {5, "Which desert is the largest in the world?", "Sahara", "Gobi", "Arabian", "Antartic", 1},
+        {4, "What is the tallest mountain in the \n\nworld?", "Mount Kilimanjaro", "Mount Everest", "K2", "Mount Fuji", 2},
+        {5, "Which desert is the largest in the \n\nworld?", "Sahara", "Gobi", "Arabian", "Antartic", 1},
     }
 };
 
