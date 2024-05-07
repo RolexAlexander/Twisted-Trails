@@ -90,6 +90,7 @@ int points = 0;
 int IsClickedOption;
 int IsHoveredOption;
 int correct_answers = 0; // init level variables for control flow
+int user_highscores[5] = {0, 0, 0, 0, 0};
 
 // Define the player structure
 typedef struct Player {
@@ -193,6 +194,48 @@ void reset_current_level(void) {
     }
 }
 
+// bubble sort for high scores
+void BubbleSort(int a[], int array_size) {
+    int i, j, temp;
+    for (i = 0; i < (array_size - 1); ++i) {
+        for (j = 0; j < array_size - 1 - i; ++j) {
+            if (a[j] > a[j+1]) {
+                temp = a[j+1];
+                a[j+1] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+    user_highscores[0] = a[5];
+    user_highscores[1] = a[4];
+    user_highscores[2] = a[3];
+    user_highscores[3] = a[2];
+    user_highscores[4] = a[1];
+
+    // print the sorted array
+    printf("Sorted array: %d %d %d %d %d\n", a[0], a[1], a[2], a[3], a[4]);
+}
+
+// get score for the current level
+void get_score(void) {
+    // formula choosen Score=(Level×Points per level(5))+(Lives remaining×Points per life(5))+(Correct answers×Points per correct answer(5))
+    int score = (current_level * 5) + (lives * 5) + (correct_answers * 5);
+
+    // check and see if the score is higher than any of the high score stored in duh array
+    // smart the system and create an array of size 6 and sort it
+    int temp_arr[6] = {score, user_highscores[0], user_highscores[1], user_highscores[2], user_highscores[3], user_highscores[4]};
+    // int *temp_arr_ptr[6] = {&score, &user_highscores[0], &user_highscores[1], &user_highscores[2], &user_highscores[3], &user_highscores[4]};
+    // sort the array
+    BubbleSort(temp_arr, 6);
+    printf("%d %d %d %d %d %d\n", temp_arr[0], temp_arr[1], temp_arr[2], temp_arr[3], temp_arr[4], temp_arr[5]);
+    // reassign the high scores
+    // user_highscores[0] = temp_arr[0];
+    // user_highscores[1] = temp_arr[1];
+    // user_highscores[2] = temp_arr[2];
+    // user_highscores[3] = temp_arr[3];
+    // user_highscores[4] = temp_arr[4];
+}
+
 /* Main function */
 int main(void)
 {
@@ -221,6 +264,9 @@ int main(void)
     Texture2D game_over_texture = LoadTexture("./assets/gameoverscreen.png");
     Texture2D win_texture = LoadTexture("./assets/gamecompleted.png");
     Texture2D question_screen = LoadTexture("./assets/questionscreen.png");
+    Texture2D leaderboard_texture = LoadTexture("./assets/leaderboard.png");
+    Texture2D controls_texture = LoadTexture("./assets/controls.png");
+    Texture2D instructions_texture = LoadTexture("./assets/instructions.png");
     Image image = LoadImage("./assets/logo3.png"); 
     Font introfont = LoadFont("./assets/font2.ttf");
     Music music = LoadMusicStream("./assets/ambient.ogg");
@@ -284,7 +330,7 @@ int main(void)
             DrawTextureRec(intro_screen, rec10, (Vector2){ 0, 0 }, RAYWHITE);
 
             // create text for menu options
-            char *menuOptionText[4] = { "Play", "Instructions", "Leaderboard", "Settings" };
+            char *menuOptionText[4] = { "Play", "Instructions", "Leaderboard", "Controls" };
 
             // Draw menu options
             for (int i = 0; i < NUM_MENU_OPTIONS; i++) {
@@ -324,37 +370,7 @@ int main(void)
         // Instructions screen
         if(game_state == 2){
             // Draw intruction screen
-            DrawTextureRec(intro_screen, rec10, (Vector2){ 0, 0 }, RAYWHITE);
-
-            // create text for menu options
-            char *menuOptionText[1] = { "Back"};
-
-            Rectangle back_rec[1] = {(Rectangle){ 1380, 735, 200, 60 }};
-            
-            // Draw intructions and back button
-            for (int i = 0; i < 1; i++) {
-                DrawRectangleRec(back_rec[i], (IsClickedOption == i || IsHoveredOption == i) ? DARKGRAY : YELLOW);
-                DrawRectangleLines(back_rec[i].x, back_rec[i].y, back_rec[i].width, back_rec[i].height, (IsClickedOption == i || IsHoveredOption == i) ? DARKBROWN : BEIGE);
-                DrawTextEx(introfont, menuOptionText[i], (Vector2){(int)(back_rec[i].x + back_rec[i].width / 2 - MeasureText(menuOptionText[i], 50) / 2), (int)back_rec[i].y + 7}, 50, 5, (IsClickedOption == i || IsHoveredOption == i) ? YELLOW : BLACK);
-            }
-
-            // Check for mouse interaction with menu options
-            int mousex = GetMouseX();
-            int mousey = GetMouseY();
-            IsClickedOption = GetClickedOption(mousex, mousey, back_rec, 1);
-            IsHoveredOption = -1; // Reset hovered option
-
-            // Handle menu option click events
-            if (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) && IsClickedOption != -1) {
-                // return to main menu
-                game_state = 0;
-                
-            };
-        }
-
-        if(game_state == 6){
-            // Draw leaderboard screen
-            DrawTextureRec(intro_screen, rec10, (Vector2){ 0, 0 }, RAYWHITE);
+            DrawTextureRec(instructions_texture, rec10, (Vector2){ 0, 0 }, RAYWHITE);
 
             // create text for menu options
             char *menuOptionText[1] = { "Back" };
@@ -382,9 +398,46 @@ int main(void)
             };
         }
 
+        if(game_state == 6){
+            // Draw leaderboard screen
+            DrawTextureRec(leaderboard_texture, rec10, (Vector2){ 0, 0 }, RAYWHITE);
+
+            // create text for menu options
+            char *menuOptionText[1] = { "Back" };
+
+            Rectangle back_rec[1] = {(Rectangle){ 1380, 735, 200, 60 }};
+            
+            // Draw intructions and back button
+            for (int i = 0; i < 1; i++) {
+                DrawRectangleRec(back_rec[i], (IsClickedOption == i || IsHoveredOption == i) ? DARKGRAY : YELLOW);
+                DrawRectangleLines(back_rec[i].x, back_rec[i].y, back_rec[i].width, back_rec[i].height, (IsClickedOption == i || IsHoveredOption == i) ? DARKBROWN : BEIGE);
+                DrawTextEx(introfont, menuOptionText[i], (Vector2){(int)(back_rec[i].x + back_rec[i].width / 2 - MeasureText(menuOptionText[i], 50) / 2), (int)back_rec[i].y + 7}, 50, 5, (IsClickedOption == i || IsHoveredOption == i) ? YELLOW : BLACK);
+            }
+
+            // Check for mouse interaction with menu options
+            int mousex = GetMouseX();
+            int mousey = GetMouseY();
+            IsClickedOption = GetClickedOption(mousex, mousey, back_rec, 1);
+            IsHoveredOption = -1; // Reset hovered option
+
+            // draw leaderboard
+            DrawText(TextFormat("%d", user_highscores[0]), 680, 200, 40, WHITE);
+            DrawText(TextFormat("%d", user_highscores[1]), 680, 305, 40, WHITE);
+            DrawText(TextFormat("%d", user_highscores[2]), 680, 418, 40, WHITE);
+            DrawText(TextFormat("%d", user_highscores[3]), 680, 523, 40, WHITE);
+            DrawText(TextFormat("%d", user_highscores[4]), 680, 632, 40, WHITE);
+
+            // Handle menu option click events
+            if (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) && IsClickedOption != -1) {
+                // return to main menu
+                game_state = 0;
+                
+            };
+        }
+
         if(game_state == 7){
-            // Draw settings screen
-            DrawTextureRec(intro_screen, rec10, (Vector2){ 0, 0 }, RAYWHITE);
+            // Draw settings/controls screen
+            DrawTextureRec(controls_texture, rec10, (Vector2){ 0, 0 }, RAYWHITE);
 
             // create text for menu options
             char *menuOptionText[1] = { "Back" };
@@ -616,6 +669,9 @@ int main(void)
 
                 // Handle menu option click events
                 if (IsMouseButtonReleased(MOUSE_LEFT_BUTTON) && IsClickedOption != -1) {
+                    // calculat score and add to lead board
+                    get_score();
+                    
                     // return to main menu
                     switch (IsClickedOption) {
                         case 0:
