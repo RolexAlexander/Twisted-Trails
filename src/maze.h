@@ -898,7 +898,7 @@ LevelQuestions level1_questions = {
         {2, "Which river forms part of the border \n\nbetween Guyana and Venezuela?", "Essequibo River", "Demerara River", "Berbice River", "Potaro River", 1},
         {3, "What is the main export of Guyana?", "Sugar", "Gold", "Bauxite", "Rice", 2},
         {4, "Which ethnic group makes up the \n\nmajority of the population in Guyana?", "Indo-Guyanese", "Afro-Guyanese", "Amerindians", "Chinese-Guyanese", 1},
-        {5, "Which famous waterfall is located\n\n in Guyana's interior region?", "Kaieteur Falls", "Niagara Falls", "Angel Falls", "Iguazu Falls", 1}
+        {5, "Which famous waterfall is located\n\nin Guyana's interior region?", "Kaieteur Falls", "Niagara Falls", "Angel Falls", "Iguazu Falls", 1}
     }
 };
 
@@ -909,8 +909,8 @@ LevelQuestions level2_questions = {
         {1, "Which country is the largest by land \n\narea?", "Russia", "Canada", "United States", "China", 1},
         {2, "Which river runs through Paris?", "Seine", "Thames", "Danube", "Rhine", 1},
         {3, "What is the capital city of Brazil?", "Brasília", "Rio de Janeiro", "São Paulo", "Buenos Aires", 1},
-        {4, "Which continent is the driest inhabited \n\ncontinent on Earth?", "Africa", "South America", "Australia", "Europe", 3},
-        {5, "Which mountain range stretches across \n\nthe north of India?", "Rocky Mountains", "Andes", "Alps", "Himalayas", 4},
+        {4, "Which continent is the driest \n\ninhabited continent on Earth?", "Africa", "South America", "Australia", "Europe", 3},
+        {5, "Which mountain range stretches \n\nacross the north of India?", "Rocky Mountains", "Andes", "Alps", "Himalayas", 4},
     }
 
 };
@@ -931,11 +931,11 @@ LevelQuestions level4_questions = {
     "Music",
     4,
     {
-        {1,"Which Guyanese artist is known as the \n\nking of chutney music?", "Terry Gajraj", "Jumo Primo", "Sundar Popo", "Apache Waria", 3},
-        {2,"What is the name of a traditional Guyanese \n\nintrument similar to steel pan?", "Steel drum", "Drum set", "Tassa", "Steel pan", 4},
-        {3,"Which Musical genre combines elements of \n\nindian music with Caribbean Rhythms?", "Reggae", "Soca", "Chutney", "Calypso", 3},
-        {4, "What is the name of the Guyanese folk dance \n\naccompanied by drumming, intricate footwork and colourful costumes?", "Jonkonnu", "Quadrille", "Ringbang", "Maypole dance", 1},
-        {5, "What is the name of the annual music festival \n\nheld in Guyana that celebrates indigenous music and cultures?", "Mashrimani Festival", "Caribana Festival", "Rupununi Rodeo", "Pakaraima Mountain festival", 4},
+        {1,"Which Guyanese artist is known \n\nas the king of chutney music?", "Terry Gajraj", "Jumo Primo", "Sundar Popo", "Apache Waria", 3},
+        {2,"What is the name of a traditional \n\nGuyanese intrument similar to steel \n\npan?", "Steel drum", "Drum set", "Tassa", "Steel pan", 4},
+        {3,"Which Musical genre combines \n\nelements of indian music with \n\nCaribbean Rhythms?", "Reggae", "Soca", "Chutney", "Calypso", 3},
+        {4, "What is the name of the Guyanese folk \n\ndance accompanied by drumming,intricate \n\nfootwork and colourful costumes?", "Jonkonnu", "Quadrille", "Ringbang", "Maypole dance", 1},
+        {5, "What is the name of the annual music \n\nfestival held in Guyana that celebrates \n\nindigenous music and cultures?", "Mashrimani Festival", "Caribana Festival", "Rupununi Rodeo", "Pakaraima Mountain festival", 4},
     }
 };
 
@@ -943,11 +943,11 @@ LevelQuestions level5_questions = {
     "Music",
     5, 
     {
-        {1, "What is the name of a Guyanese folk song that \n\noriginated among enslaved Africans?", "Benna", "Ska", "Mento", "Kumina", 1},
-        {2, "Which Guyanese musician is known for blending \n\ntraditional Guyanese music with jazz and classical music?", "Dave Martins", "Eddy Grant", "Melanie Abrahams", "Charmaine Blackman", 3},
-        {3, "Which Guyanese Musical Instrument is similar \n\nto a Guitar but has additonal strings and is commonly used among Amerindians?", "Banjo", "Quatro", "Ukelele", "Mandolin", 2}, 
-        {4, "Which Guyanese Musical group gained international \n\nrecognition for their fusion of Reggae, rock and soca music?", "No Parking Band", "Parachute Band", "The Soca boys", "The Telstars", 2},
-        {5, "Which of the following instruments is known for \n\nits deep, rich sound?", "Flute", "Trumpet", "Violin", "Cello", 4},
+        {1, "What is the name of a Guyanese folk \n\nsong that originated among enslaved \n\nAfricans?", "Benna", "Ska", "Mento", "Kumina", 1},
+        {2, "Which Guyanese musician is known \n\nfor blending traditional Guyanese \n\nmusic with jazz and classical music?", "Dave Martins", "Eddy Grant", "Melanie Abrahams", "Charmaine Blackman", 3},
+        {3, "Which Guyanese Musical Instrument is \n\nsimilar to a Guitar but has additonal \n\nstrings and is commonly used among Amerindians?", "Banjo", "Quatro", "Ukelele", "Mandolin", 2}, 
+        {4, "Which Guyanese Musical group \n\ngained international recognition for their \n\nfusion of Reggae, rock and soca music?", "No Parking Band", "Parachute Band", "The Soca boys", "The Telstars", 2},
+        {5, "Which of the following instruments \n\nis known for its deep, rich sound?", "Flute", "Trumpet", "Violin", "Cello", 4},
     }
 };
 
@@ -955,9 +955,9 @@ LevelQuestions level6_questions = {
     "Music",
     6,
     {
-        {1, "Who is often referred to as the king of pop?","Micheal Jackson", "Elvis Presley", "Prince", "Madonna", 1}, 
-        {2, "Which instrument is known as the king of \n\ninstruments?", "Piano", "Guitar", "Violin", "Organ", 4},
-        {3, "Who composed the famous Symphony known \n\nas the Choral Symphony?","Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert", 1},
+        {1, "Who is often referred to as the king \n\nof pop?","Micheal Jackson", "Elvis Presley", "Prince", "Madonna", 1}, 
+        {2, "Which instrument is known as the king\n\n of instruments?", "Piano", "Guitar", "Violin", "Organ", 4},
+        {3, "Who composed the famous Symphony\n\n known as the Choral Symphony?","Ludwig van Beethoven", "Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Franz Schubert", 1},
         {4, "Which of the following bands is known \n\nfor their album The dark side of the moon?", "The Beatles", "Led Zepplin", "Pink Floyd", "Queen",  3}, 
         {5, "Who is considered the Queen of soul?", "Beyonce", "Diana Ross", "Whitney Houston", "Aretha Franklin", 4},
     }
@@ -970,8 +970,8 @@ LevelQuestions level7_questions = {
         {1, "Who holds the record for most Olympic \n\nGold Medals?", "Micheal Phelps", "Usain Bolt", "Simone Biles", "Carl Lewis", 1}, 
         {2, "What is the diameter of a Basketball \n\nHoop in inches?", "16", "18", "20", "24", 2},
         {3, "Which Country has the most FIFA World \n\ncup titles?", "Germany", "Argentina", "Brazil", "Italy", 3},
-        {4, "How many players are there on a \n\nBaseball team?", "9", "10", "11", "12", 1}, 
-        {5, "Which is the only sport in which the defending \n\nteam has control of the ball?", "Basketball", "American Football", "Soccer", "Rugby", 2},
+        {4, "How many players are there on a Baseball \n\nteam?", "9", "10", "11", "12", 1}, 
+        {5, "Which is the only sport in which the \n\ndefending team has control of the ball?", "Basketball", "American Football", "Soccer", "Rugby", 2},
     }    
 };
 
@@ -979,11 +979,11 @@ LevelQuestions level8_questions = {
     "Sports", 
     8,
     {
-        {1,"Which Country hosted the first \n\nmodern Olympics?", "Greece", "France", "United Kingdom", "United States", 1}, 
+        {1,"Which Country hosted the first modern \n\nOlympics?", "Greece", "France", "United Kingdom", "United States", 1}, 
         {2, "In which year were the first Paralympic \n\ngames held?", "1948", "1952", "1960", "1964", 3}, 
         {3, "Which sport uses the term Goblet, \n\ncoxed flour, and scull?", "Rowing", "Canoeing", "Sailing", "Swimming", 1}, 
         {4, "What is the maximum number of clubs \n\nallowed in a golfer's bag?", "10", "12", "14", "16", 3},
-        {5, "Who was the first female tennis player to win \n\nall four grand slam singles titles in the same year?", "Serena Williams", "Martina Navratilova", "Steffi Graf", "Margaret Court", 3}, 
+        {5, "Who was the first female tennis player \n\nto win all four grand slam singles titles \n\nin the same year?", "Serena Williams", "Martina Navratilova", "Steffi Graf", "Margaret Court", 3}, 
     } 
 };
 
@@ -993,9 +993,9 @@ LevelQuestions level9_questions = {
     {
         {1, "Who was the first Prime Minister of \n\nGuyana after it gained Independence?", "Forbes Burnham", "Cheddi Jagan", "Janet Jagan", "Linden Forbes Sampson Burnham", 2}, 
         {2, "Which political party won the most \n\nrecent general election in Guyana?", "PNC", "PPP/C", "GAP", "UF", 2},
-        {3, "Who was the first female president of Guyana?", "Janet Jagan", "Viola Burnham", "Janet Rosenburg", "Ruth Jagan", 1},
-        {4, "What is the term limit for a President in Guyana?", "4", "5", "6", "7", 2}, 
-        {5, "What is the name of the Legislative Body in Guyana?", "Parliment", "National Assembly", "Senate", "House of representatives", 2},
+        {3, "Who was the first female president of \n\nGuyana?", "Janet Jagan", "Viola Burnham", "Janet Rosenburg", "Ruth Jagan", 1},
+        {4, "What is the term limit for a President \n\nin Guyana?", "4", "5", "6", "7", 2}, 
+        {5, "What is the name of the Legislative \n\nBody in Guyana?", "Parliment", "National Assembly", "Senate", "House of representatives", 2},
     }
 };
 
@@ -1003,11 +1003,11 @@ LevelQuestions level10_questions = {
     "Politics", 
     10, 
     {
-        {1, "What was the name of the political agreement \n\nsigned in 1988 to address the issue of racial tensions in Guyana?", "Georgetown Accord", "Lusignan accord", "Herstelling accord", "Good Hope accord", 2},
-        {2, "Who served as the Prime Minister of Guyana \n\nduring 1984-1985?", "Cheddi jagan", "Desmond Hoyte", "Forbes Burnham", "Janet Jagan", 2}, 
-        {3, "What is the name of the political party that \n\nwas founded by Forbes Burnham in 1957?", "PPP", "PNC", "AFC", "WPA", 2}, 
-        {4, "Which Guyanese President was Awarded the \n\norder of Excellence?", "Cheddi Jagan", "Forbes Burnham", "Janet Jagan", "Desmond Hoyte", 1}, 
-        {5, "Which Political party was founded by Cheddi \n\nand Janet Jagan in 1946?", "PPP", "PNC", "WPA", "UF", 1}, 
+        {1, "What was the name of the political \n\nagreement signed in 1988 to address the \n\nissue of racial tensions in Guyana?", "Georgetown Accord", "Lusignan accord", "Herstelling accord", "Good Hope accord", 2},
+        {2, "Who served as the Prime Minister\n\nof Guyana during 1984-1985?", "Cheddi jagan", "Desmond Hoyte", "Forbes Burnham", "Janet Jagan", 2}, 
+        {3, "What is the name of the political \n\nparty that was founded by Forbes Burnham \n\nin 1957?", "PPP", "PNC", "AFC", "WPA", 2}, 
+        {4, "Which Guyanese President\n\nwas Awarded the order of Excellence?", "Cheddi Jagan", "Forbes Burnham", "Janet Jagan", "Desmond Hoyte", 1}, 
+        {5, "Which Political party was \n\nfounded by Cheddi and Janet Jagan in 1946?", "PPP", "PNC", "WPA", "UF", 1}, 
     }
 };
 
@@ -1016,9 +1016,9 @@ LevelQuestions level11_questions = {
     11, 
      {
         {1, "Who is the current Chancellor of Germany?", "Angela Merkel", "Emmanuel Macron", "Boris Johnson", "Justin Trudeau", 1}, 
-        {2, "What is the upper house of the United \n\nStates Congress called?", "House of Representatives", "Senate", "Supreme Court", "Cabinet", 2}, 
-        {3, "Who is the current Prime Minister of Canada?", "Justin Trudeau", "Stephen Harper", "Andrew Scheer", "Jagmeet Singh", 1}, 
-        {4, "Which country has the world's oldest \n\nwritten constitution still in use?", "United Kingdom", "United States", "France", "Switzerland", 2}, 
+        {2, "What is the upper house of the \n\nUnited States Congress called?", "House of Representatives", "Senate", "Supreme Court", "Cabinet", 2}, 
+        {3, "Who is the current Prime Minister \n\nof Canada?", "Justin Trudeau", "Stephen Harper", "Andrew Scheer", "Jagmeet Singh", 1}, 
+        {4, "Which country has the world's \n\noldest written constitution still in use?", "United Kingdom", "United States", "France", "Switzerland", 2}, 
         {5, "What is the political system of Japan?", "Parliamentary democracy", "Presidential republic", "Absolute monarchy", "Communist state", 1},
     } 
 };
@@ -1028,10 +1028,10 @@ LevelQuestions level12_questions = {
     12,
     {
         {1, "What was the former name of Guyana \n\nbefore independence?", "British Guiana", "Dutch Guiana", "Spanish Guiana", "French Guiana", 1},
-        {2, "What is the predominant religion in Guyana?", "Christianty","Hinduism", "Islam", "Buddhism", 1},
+        {2, "What is the predominant religion \n\nin Guyana?", "Christianty","Hinduism", "Islam", "Buddhism", 1},
         {3, "Which industry is a major contributor \n\nto Guyana's economy?", "Agriculture", "Mining", "Tourism", "Manufacturing", 1},
-        {4, "What is the name of the indigenous people \n\nwho make up the largest ethnic group in Guyana?", "Arawaks", "Warao", "Caribs", "Amerindians", 1}, 
-        {5, "Which political party has traditionally held \n\npower in Guyana since Independence?", "PNC", "PPP/C", "GAP", "UF", 2}
+        {4, "What is the name of the indigenous \n\npeople who make up the largest ethnic \n\ngroup in Guyana?", "Arawaks", "Warao", "Caribs", "Amerindians", 1}, 
+        {5, "Which political party has traditionally \n\nheld power in Guyana since Independence?", "PNC", "PPP/C", "GAP", "UF", 2}
     }
 };
 
@@ -1039,11 +1039,11 @@ LevelQuestions level13_questions = {
     "History",
     13,
     {
-        {1, "Who was the British governor who negotiated the Treaty of Paris \n\nin 1814, which established the boundaries between British Guiana and Suriname?", "Henry Light", "Robert Hermann Schomburgk", "Sir Benjamin D'Uban", "Sir Ralph Abercromby", 1}, 
-        {2, "What was the name of the indigenous leader who led the resistance \n\nagainst the British during the Barbadian occupation of Guyana from 1649 to 1667?", "Queen Nanny", "Túpac Amaru II", "Cuffy", "Hyarima", 4}, 
-        {3, "In 1763, a revolt led by an enslaved African named Cuffy challenged \n\nDutch colonial rule in what was then known as Berbice. What is this rebellion commonly referred to as?", "Berbice Uprising", "Demerara Rebellion", "Essequibo Revolt", "Cuffy's Rebellion", 4}, 
-        {4, "What was the name of the agreement signed between Guyana and Venezuela \n\nin 1966 that temporarily settled the dispute over the border region known as the Guayana Esequiba?", "Treaty of Georgetown", "Treaty of Geneva", "Geneva Agreement", "Treaty of Washington", 3}, 
-        {5, "Which international organization played a crucial role in mediating the \n\nterritorial dispute between Guyana and Venezuela in the late 20th century?", "United Nations", "Organization of American States (OAS)", "Caribbean Community (CARICOM)", "Commonwealth of Nations", 2}, 
+        {1, "Who was the British governor who \n\nnegotiated the Treaty of Paris in 1814, \n\nwhich established the boundaries between \n\nBritish Guiana and Suriname?", "Henry Light", "Robert Hermann Schomburgk", "Sir Benjamin D'Uban", "Sir Ralph Abercromby", 1}, 
+        {2, "What was the name of the indigenous \n\neader who led the resistance against the \n\nBritish during the Barbadian occupation \n\nof Guyana from 1649 to 1667?", "Queen Nanny", "Túpac Amaru II", "Cuffy", "Hyarima", 4}, 
+        {3, "In 1763, a revolt led by an enslaved \n\nAfrican named Cuffy challenged Dutch colonial \n\nrule in what was then known as Berbice. \n\nWhat is this rebellion commonly referred to as?", "Berbice Uprising", "Demerara Rebellion", "Essequibo Revolt", "Cuffy's Rebellion", 4}, 
+        {4, "What was the name of the agreement signed \n\nbetween Guyana and Venezuela in 1966 that \n\ntemporarily settled the dispute over the border\n\nregion known as the Guayana Esequiba?", "Treaty of Georgetown", "Treaty of Geneva", "Geneva Agreement", "Treaty of Washington", 3}, 
+        {5, "Which international organization played a \n\ncrucial role in mediating the territorial \n\ndispute between Guyana and Venezuela \n\nin the late 20th century?", "United Nations", "Organization of American States (OAS)", "Caribbean Community (CARICOM)", "Commonwealth of Nations", 2}, 
     }
 };
 
@@ -1051,11 +1051,11 @@ LevelQuestions level14_questions = {
     "History", 
     14, 
     {
-        {1, "Who was the Dutch explorer who is credited \n\nwith being the first European to explore the area that is now Guyana in the late 16th century?", "Henry Hudson", "Willem Barentsz", "Abraham Crijnssen", "Sir Walter Raleigh", 4},
-        {2, "What was the name of the indigenous people who \n\noriginally inhabited the area of Guyana before the arrival of European settlers?", "Arawaks", "Caribs", "Warao", "Kalina", 2}, 
-        {3, "Which British colony was Guyana a part of before \n\ngaining independence in 1966?", "British Guiana", "British Honduras", "British West Indies", "British Malaya", 1},
-        {4, "What was the name of the treaty signed between the \n\nDutch and the British in 1814, which ceded control of the Dutch colonies in Guyana to the British?", "Treaty of Utrecht", "Treaty of Amiens", "Treaty of Paris", "Treaty of London", 3},
-        {5, "Who was the Guyanese author and activist who wrote \n\n'The Autobiography of an Ex-Colored Man' and played a significant role in the Harlem Renaissance in the United States?", "Walter Rodney", "C. L. R. James", "Edgar Mittelholzer", "George Lamming", 3}, 
+        {1, "Who was the Dutch explorer who is \n\ncredited with being the first European to \n\nexplore the area that is now Guyana in \n\nthe late 16th century?", "Henry Hudson", "Willem Barentsz", "Abraham Crijnssen", "Sir Walter Raleigh", 4},
+        {2, "What was the name of the indigenous people \n\nwho originally inhabited the area of Guyana \n\nbefore the arrival of European settlers?", "Arawaks", "Caribs", "Warao", "Kalina", 2}, 
+        {3, "Which British colony was Guyana a part \n\nof before gaining independence in 1966?", "British Guiana", "British Honduras", "British West Indies", "British Malaya", 1},
+        {4, "What was the name of the treaty signed \n\nbetween the Dutch and the British in 1814, \n\nwhich ceded control of the Dutch \n\ncolonies in Guyana to the British?", "Treaty of Utrecht", "Treaty of Amiens", "Treaty of Paris", "Treaty of London", 3},
+        {5, "Who was the Guyanese author and activist \n\nwho wrote 'The Autobiography of an Ex-Colored Man' \n\nand played a significant role in the Harlem \n\nRenaissance in the United States?", "Walter Rodney", "C. L. R. James", "Edgar Mittelholzer", "George Lamming", 3}, 
     }
 };
 
@@ -1065,9 +1065,9 @@ LevelQuestions level15_questions = {
     {
         {1, "What is the national fruit of Guyana?", "Mango", "Papaya", "Pineapple", "Guava", 1},
         {2, "What is the name of the traditional \n\nGuyanese flatbread often served with curries?", "Roti", "Naan", "Chapati", "Pita", 1},
-        {3, "Which beverage is commonly consumed in \n\nGuyana to beat the heat?", "Coffee", "Tea", "Lemonade", "Mauby", 4},
-        {4, "What is 'Bake,' a popular Guyanese breakfast \n\nitem, made from?", "Fried dough", "Steamed rice", "Boiled eggs", "Grilled fish", 1},
-        {5, "Which fish is commonly used in Guyanese cuisine \n\nto make 'Fish Curry'?", "Salmon", "Tuna", "Tilapia", "Cod", 3}
+        {3, "Which beverage is commonly consumed \n\nin Guyana to beat the heat?", "Coffee", "Tea", "Lemonade", "Mauby", 4},
+        {4, "What is 'Bake,' a popular \n\nGuyanese breakfast item, made from?", "Fried dough", "Steamed rice", "Boiled eggs", "Grilled fish", 1},
+        {5, "Which fish is commonly used in \n\nGuyanese cuisine to make 'Fish Curry'?", "Salmon", "Tuna", "Tilapia", "Cod", 3}
     }
 };
 
@@ -1075,11 +1075,11 @@ LevelQuestions level16_questions = {
     "Food",
     16,
     { 
-        {1, "What is the main ingredient in 'Pepperpot,' \n\na traditional Guyanese Christmas dish?", "Beef", "Chicken", "Pork", "Fish", 3},
-        {2, "What is the name of the popular Guyanese street \n\nfood made from split peas and served with chutney?", "Dhal Puri", "Pholourie", "Aloo Pie", "Egg Ball", 1},
-        {3, "What is 'Metemgee,' a traditional Guyanese dish, \n\nmade from?", "Rice and peas", "Coconut milk", "Cassava", "Vegetables and meat", 4},
-        {4, "Which fruit is commonly used to make 'Guyana Cherry' jam?", "Guava", "Cherry", "Mango", "Papaya", 1},
-        {5, "What is 'Mango Sour,' a popular Guyanese drink, made from?", "Mango juice and rum", "Mango pulp and lime juice", "Mango puree and sugar", "Mango chunks and coconut water", 2}
+        {1, "What is the main ingredient in 'Pepperpot,\n\na traditional Guyanese Christmas dish?", "Beef", "Chicken", "Pork", "Fish", 3},
+        {2, "What is the name of the \n\npopular Guyanese street food made from \n\nsplit peas and served with chutney?", "Dhal Puri", "Pholourie", "Aloo Pie", "Egg Ball", 1},
+        {3, "What is 'Metemgee,' a \n\ntraditional Guyanese dish, \n\nmade from?", "Rice and peas", "Coconut milk", "Cassava", "Vegetables and meat", 4},
+        {4, "Which fruit is commonly \n\nused to make 'Guyana Cherry' jam?", "Guava", "Cherry", "Mango", "Papaya", 1},
+        {5, "What is 'Mango Sour,' \n\na popular Guyanese drink, made from?", "Mango juice and rum", "Mango pulp and lime juice", "Mango puree and sugar", "Mango chunks and coconut water", 2}
     }
 };
 
@@ -1087,11 +1087,11 @@ LevelQuestions level17_questions = {
     "Food",
     17,
     {
-        {1, "What is 'Kurma,' a traditional Guyanese sweet \n\ntreat, made from?", "Deep-fried dough balls dipped in sugar syrup", "Coconut and condensed milk cooked with spices", "Crispy fried noodles coated in caramelized sugar", "Sweetened coconut wrapped in pastry dough", 3},
-        {2, "Which traditional Guyanese dish is made from \n\nokra, shrimp, and spices?", "Cook-up Rice", "Fish Curry", "Pepperpot", "Metemgee", 1},
-        {3, "What is the name of the popular Guyanese soup \n\nmade with cow heel, ground provisions, and dumplings?", "Chicken Foot Soup", "Cowheel Soup", "Pepperpot Soup", "Fish Broth", 2},
-        {4, "Which sweet treat is made from grated cassava, \n\ncoconut milk, and sugar, then baked to perfection?", "Cassava Cake", "Coconut Tart", "Pine Tart", "Custard Block", 1},
-        {5, "What is the name of the alcoholic beverage made \n\nfrom fermented sugarcane juice, popular in Guyana?", "Rum Punch", "Mauby", "Cashew Wine", "Demerara Rum", 3},
+        {1, "What is 'Kurma,' a traditional \n\nGuyanese sweet treat, made from?", "Deep-fried dough balls dipped in sugar syrup", "Coconut and condensed milk cooked with spices", "Crispy fried noodles coated in caramelized sugar", "Sweetened coconut wrapped in pastry dough", 3},
+        {2, "Which traditional Guyanese dish is\n\nmade from okra, shrimp, and spices?", "Cook-up Rice", "Fish Curry", "Pepperpot", "Metemgee", 1},
+        {3, "What is the name of the popular \n\nGuyanese soup made with cow heel, ground \n\nprovisions, and dumplings?", "Chicken Foot Soup", "Cowheel Soup", "Pepperpot Soup", "Fish Broth", 2},
+        {4, "Which sweet treat is made from \n\ngrated cassava, coconut milk, and \n\nsugar, then baked to perfection?", "Cassava Cake", "Coconut Tart", "Pine Tart", "Custard Block", 1},
+        {5, "What is the name of the alcoholic \n\nbeverage made from fermented sugarcane \n\njuice, popular in Guyana?", "Rum Punch", "Mauby", "Cashew Wine", "Demerara Rum", 3},
     }
 };
 
@@ -1100,10 +1100,10 @@ LevelQuestions level18_questions = {
     18,
     {
         {1, "Who played the role of Harry Potter in \n\nthe film series based on J.K. Rowling's books?", "Daniel Radcliffe", "Rupert Grint", "Emma Watson", "Tom Felton", 1},
-        {2, "What is the name of the fictional town \n\nwhere 'The Simpsons' live?", "Springfield", "Quahog", "South Park", "Arlen", 1},
-        {3, "Which movie features the character Jack \n\nDawson and Rose DeWitt Bukater aboard the RMS Titanic?", "Titanic", "Pearl Harbor", "The Notebook", "The Great Gatsby", 1},
-        {4, "In 'Friends,' what is the name of Ross Geller's \n\nsecond wife?", "Rachel Green", "Monica Geller", "Carol Willick", "Emily Waltham", 4},
-        {5, "Who voices the character of Woody in the 'Toy Story' \n\nmovie franchise?", "Tom Hanks", "Tim Allen", "Tom Cruise", "Will Smith", 1},
+        {2, "What is the name of the fictional \n\ntown where 'The Simpsons' live?", "Springfield", "Quahog", "South Park", "Arlen", 1},
+        {3, "Which movie features the character \n\nJack Dawson and Rose DeWitt Bukater aboard \n\nthe RMS Titanic?", "Titanic", "Pearl Harbor", "The Notebook", "The Great Gatsby", 1},
+        {4, "In 'Friends,' what is the name of \n\nRoss Geller's second wife?", "Rachel Green", "Monica Geller", "Carol Willick", "Emily Waltham", 4},
+        {5, "Who voices the character of Woody in the \n\n'Toy Story' movie franchise?", "Tom Hanks", "Tim Allen", "Tom Cruise", "Will Smith", 1},
     }
 };
 
@@ -1111,11 +1111,11 @@ LevelQuestions level19_questions = {
     "Movies and TV Shows",
     19,
     {
-        {1, "Which movie won the Academy Award for \n\nBest Picture in 2019?", "Green Book", "Parasite", "The Shape of Water", "Moonlight", 2},
-        {2, "What is the name of the fictional continent \n\nwhere most of the events in 'Game of Thrones' take place?", "Westeros", "Essos", "Sothoryos", "The North", 1},
-        {3, "Who directed the 2014 science fiction film \n\n'Interstellar'?", "Christopher Nolan", "Steven Spielberg", "James Cameron", "Denis Villeneuve", 1},
-        {4, "In the TV series 'Breaking Bad,' what is the \n\nstreet name used by Walter White for his drug-dealing alter ego?", "Heisenberg", "Scarface", "The Joker", "Mr. White", 1},
-        {5, "Which actor played the character Neo in the movie \n\n'The Matrix'?", "Keanu Reeves", "Laurence Fishburne", "Hugo Weaving", "Carrie-Anne Moss", 1},
+        {1, "Which movie won the Academy Award \n\nfor Best Picture in 2019?", "Green Book", "Parasite", "The Shape of Water", "Moonlight", 2},
+        {2, "What is the name of the fictional \n\ncontinent where most of the events \n\nin 'Game of Thrones' take place?", "Westeros", "Essos", "Sothoryos", "The North", 1},
+        {3, "Who directed the 2014 science \n\nfiction film 'Interstellar'?", "Christopher Nolan", "Steven Spielberg", "James Cameron", "Denis Villeneuve", 1},
+        {4, "In the TV series 'Breaking Bad,' what \n\nis the street name used by Walter White \n\nfor his drug-dealing alter ego?", "Heisenberg", "Scarface", "The Joker", "Mr. White", 1},
+        {5, "Which actor played the character \n\nNeo in the movie 'The Matrix'?", "Keanu Reeves", "Laurence Fishburne", "Hugo Weaving", "Carrie-Anne Moss", 1},
     }
 };
 
@@ -1123,11 +1123,11 @@ LevelQuestions level20_questions = {
     "Movies and TV Shows", 
     20,
     {
-        {1, "Who directed the 1975 movie 'One Flew Over \n\nthe Cuckoo's Nest'?", "Stanley Kubrick", "Francis Ford Coppola", "Martin Scorsese", "Milos Forman", 4},
-        {2, "What is the name of the actress who won an \n\nAcademy Award for her role as Queen Elizabeth II in the movie 'The Queen'?", "Cate Blanchett", "Meryl Streep", "Judi Dench", "Helen Mirren", 4},
-        {3, "Which TV series is set in the fictional town of \n\nTwin Peaks, Washington?", "Fargo", "True Detective", "Twin Peaks", "The X-Files", 3},
-        {4, "What is the name of the protagonist in the TV series \n\n'The Sopranos'?", "Tony Soprano", "Carmela Soprano", "Christopher Moltisanti", "Paulie Walnuts", 1},
-        {5, "Which movie features the character Travis Bickle, a \n\nmentally unstable Vietnam War veteran working as a taxi driver in New York City?", "Taxi Driver", "Raging Bull", "Goodfellas", "Casino", 1},
+        {1, "Who directed the 1975 movie \n\n'One Flew Over the Cuckoo's Nest'?", "Stanley Kubrick", "Francis Ford Coppola", "Martin Scorsese", "Milos Forman", 4},
+        {2, "What is the name of the actress who \n\nwon an Academy Award for her role as \n\nQueen Elizabeth II in the movie 'The Queen'?", "Cate Blanchett", "Meryl Streep", "Judi Dench", "Helen Mirren", 4},
+        {3, "Which TV series is set in the \n\nfictional town of Twin Peaks, Washington?", "Fargo", "True Detective", "Twin Peaks", "The X-Files", 3},
+        {4, "What is the name of the protagonist \n\nin the TV series 'The Sopranos'?", "Tony Soprano", "Carmela Soprano", "Christopher Moltisanti", "Paulie Walnuts", 1},
+        {5, "Which movie features the character \n\nTravis Bickle, a mentally unstable Vietnam War \n\nveteran working as a taxi driver \n\nin New York City?", "Taxi Driver", "Raging Bull", "Goodfellas", "Casino", 1},
     }        
 };
 
@@ -1135,11 +1135,11 @@ LevelQuestions level_bonus_questions = {
     "Sports",
     7,
     {
-        {1, "In which sport is the term love used to \n\nindicate the score is zero?", "Tennis", "Soccer", "Basketball", "Golf", 1},
-        {2, "How many players are on the court for a \n\nteam in basketball?", "5", "6", "7", "8", 1}, 
-        {3, "What is the most watched annual sporting \n\nevent in the world?", "Fifa world cup", "Super bowl", "Olympic Games", "Wimbledon Championships", 1}, 
-        {4, "In which sport would u perform a slam \n\ndunk?", "Basketball", "Golf", "Soccer", "Tennis", 1}, 
-        {5, "How many points is a touchdown worth in \n\nAmerican Football?", "3", "6", "1", "2", 2}, 
+        {1, "In which sport is the term love used \n\nto indicate the score is zero?", "Tennis", "Soccer", "Basketball", "Golf", 1},
+        {2, "How many players are on the court \n\nfor a Team in basketball?", "5", "6", "7", "8", 1}, 
+        {3, "What is the most watched annual \n\nsporting event in the world?", "Fifa world cup", "Super bowl", "Olympic Games", "Wimbledon Championships", 1}, 
+        {4, "In which sport would u \n\nperform a slam dunk?", "Basketball", "Golf", "Soccer", "Tennis", 1}, 
+        {5, "How many points is a touchdown \n\nworth in American Football?", "3", "6", "1", "2", 2}, 
     }
 };
 
