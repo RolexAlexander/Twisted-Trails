@@ -1,5 +1,3 @@
----
-
 # Twisted Trails - Guyanese-themed Maze Game
 
 Twisted Trails is a maze game implemented in C, where players navigate through mazes and answer Guyanese-themed questions to progress. The goal is to reach the end of each level while accumulating points and avoiding obstacles.
@@ -74,5 +72,3 @@ Contributions to Twisted Trails are welcome! Feel free to submit bug fixes, feat
 ## 7. License <a name="license"></a>
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
-
----
