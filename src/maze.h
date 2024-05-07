@@ -1077,7 +1077,7 @@ LevelQuestions level16_questions = {
     { 
         {1, "What is the main ingredient in 'Pepperpot,\n\na traditional Guyanese Christmas dish?", "Beef", "Chicken", "Pork", "Fish", 3},
         {2, "What is the name of the \n\npopular Guyanese street food made from \n\nsplit peas and served with chutney?", "Dhal Puri", "Pholourie", "Aloo Pie", "Egg Ball", 1},
-        {3, "What is 'Metemgee,' a \n\ntraditional Guyanese dish, \n\nmade from?", "Rice and peas", "Coconut milk", "Cassava", "Vegetables and meat", 4},
+        {3, "What is 'Metemgee,' a \n\ntraditional Guyanese dish, made from?", "Rice and peas", "Coconut milk", "Cassava", "Vegetables and meat", 4},
         {4, "Which fruit is commonly \n\nused to make 'Guyana Cherry' jam?", "Guava", "Cherry", "Mango", "Papaya", 1},
         {5, "What is 'Mango Sour,' \n\na popular Guyanese drink, made from?", "Mango juice and rum", "Mango pulp and lime juice", "Mango puree and sugar", "Mango chunks and coconut water", 2}
     }
