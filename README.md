@@ -63,11 +63,11 @@ To install and run Twisted Trails on your system, follow these steps:
 
 ## 5. Documentation <a name="documentation"></a>
 
-The source code includes detailed comments to explain the functionality of each function, variable, and game state. Additionally, a `maze.h` file contains declarations for maze-related functions and structures.
+The source code includes detailed comments to explain the functionality of each function, variable, and game state. Additionally, a `src/maze.h` file contains declarations for maze-related functions and structures.
 
 ## 6. Contributing <a name="contributing"></a>
 
-Contributions to Twisted Trails are welcome! Feel free to submit bug fixes, feature enhancements, or suggestions via pull requests on [GitHub](https://github.com/your-username/twisted-trails).
+Contributions to Twisted Trails are welcome! Feel free to submit bug fixes, feature enhancements, or suggestions via pull requests on [GitHub](https://github.com/RolexAlexander/Twisted-Trails.git).
 
 ## 7. License <a name="license"></a>
 
